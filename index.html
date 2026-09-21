@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6d5efc" />
+    <meta name="description" content="Orbit — Offline habit tracker" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Orbit" />
+
+    <title>Orbit</title>
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Daily rhythm</p>
+          <h1>Orbit</h1>
+        </div>
+        <span class="status-pill">Offline ready</span>
+      </header>
+
+      <main class="layout">
+        <section class="panel hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Build momentum</p>
+            <h2>Keep your habits in orbit.</h2>
+            <p>
+              Track the routines that help your day stay steady, even when you’re
+              away from the internet.
+            </p>
+          </div>
+
+          <div id="summary" class="summary-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="panel form-panel">
+          <div class="section-head">
+            <h3>Add a habit</h3>
+          </div>
+
+          <form id="habit-form" class="habit-form">
+            <label>
+              <span>Name</span>
+              <input
+                id="habit-name"
+                name="habit-name"
+                type="text"
+                maxlength="30"
+                placeholder="Read 20 pages"
+                required
+              />
+            </label>
+
+            <label>
+              <span>Emoji</span>
+              <input
+                id="habit-emoji"
+                name="habit-emoji"
+                type="text"
+                maxlength="2"
+                value="✨"
+                aria-label="Habit emoji"
+              />
+            </label>
+
+            <label>
+              <span>Goal</span>
+              <input
+                id="habit-goal"
+                name="habit-goal"
+                type="number"
+                min="1"
+                max="12"
+                value="1"
+                required
+              />
+            </label>
+
+            <button type="submit" class="primary-btn">Add habit</button>
+          </form>
+        </section>
+
+        <section class="panel habits-panel">
+          <div class="section-head">
+            <h3>Today</h3>
+            <button id="reset-day" class="secondary-btn" type="button">
+              Reset day
+            </button>
+          </div>
+
+          <div id="habit-list" class="habit-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
