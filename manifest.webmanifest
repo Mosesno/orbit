@@ -1,0 +1,17 @@
+{
+  "name": "Orbit",
+  "short_name": "Orbit",
+  "description": "Offline habit tracker for building daily momentum.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#08111f",
+  "theme_color": "#6d5efc",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
